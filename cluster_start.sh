@@ -1,4 +1,4 @@
-#!/bin/babsh
+#!/bin/bash
 
 set -xe
 
