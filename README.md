@@ -7,7 +7,7 @@ chmod +x single_node_cluster.sh
 ./single_node_cluster.sh
 ```
 
-* If you want to create a `multi node kubeadm cluster` then remove the last command of the `cluster_start.sh` script i.e.
+* If you want to create a `multi node kubeadm cluster` then remove the last command of the `single_node_cluster.sh` script i.e.
 
 ```
 kubectl taint nodes --all node-role.kubernetes.io/master-
