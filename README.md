@@ -1,19 +1,25 @@
-# kubeadm-cluster
-Creating kubernetes cluster using `kubeadm` .
-
-* If you want to create a `single node kubeadm cluster` then run the last command of the `cluster_start.sh`script i.e.
+# Single Node Kubeadm Cluster
 
 ```
-kubectl taint nodes --all  node-role.kubernetes.io/master-
+git clone https://github.com/AdityaKoranga/kubeadm-cluster
+cd kubeadm-cluster/
+chmod +x single_node_cluster.sh
+./single_node_cluster.sh
 ```
-## Also keep in mind to turn the swap off .
-* Firstly check whether the swap is off by running the command 
+
+* If you want to create a `multi node kubeadm cluster` then remove the last command of the `single_node_cluster.sh` script i.e.
+
 ```
-sudo free -g
+kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
-> If it shows 0 in the swap section then it is fine, otherwise run the following command:
-```
-sudo swapoff -a
-```
-**We are using flannel here as our CNI**
+
+**We are using flannel as our CNI**
+
 > flannel is a network fabric for containers, designed for Kubernetes.
+
+## To delete Kubeadm CLuster
+
+```
+kubectl drain <node name> --delete-emptydir-data --force --ignore-daemonsets
+sudo kubeadm reset
+```
