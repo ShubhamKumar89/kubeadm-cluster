@@ -13,9 +13,8 @@ chmod +x single_node_cluster.sh
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
 
-**We are using flannel as our CNI**
-
-> flannel is a network fabric for containers, designed for Kubernetes.
+> **Note**:
+> We are using `flannel` as our CNI. Flannel is a network fabric for containers, designed for Kubernetes.
 
 ## To delete Kubeadm CLuster
 
